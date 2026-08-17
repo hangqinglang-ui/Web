@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>好友助力</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 218, 120, 0.45), transparent 32%),
+        linear-gradient(180deg, #fff7df 0%, #fff 38%, #f7f7f7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top {
+      padding: 28px 20px 16px;
+      text-align: center;
+    }
+
+    .app-name {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 8px 22px rgba(0,0,0,.07);
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #222;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      font-size: 15px;
+      color: #888;
+    }
+
+    .card {
+      margin: 20px 16px 0;
+      padding: 24px 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 14px 40px rgba(0,0,0,.10);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffcc4d, #ff8a00);
+      color: #fff;
+      font-size: 30px;
+      box-shadow: 0 10px 20px rgba(255, 145, 0, .25);
+    }
+
+    .nickname {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .desc {
+      margin: 8px 0 20px;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .progress-wrap {
+      text-align: left;
+      margin: 0 4px 18px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 76%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ffca28, #ff7a00);
+    }
+
+    .reward {
+      margin: 0 auto 20px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #fff7e7;
+      color: #8b5a00;
+    }
+
+    .reward strong {
+      display: block;
+      font-size: 27px;
+      margin-bottom: 4px;
+    }
+
+    .reward span {
+      font-size: 13px;
+    }
+
+    .help-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      padding: 16px 20px;
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #ffb300, #ff6f00);
+      box-shadow: 0 10px 22px rgba(255, 111, 0, .25);
+      cursor: pointer;
+      transition: transform .12s ease, filter .12s ease;
+    }
+
+    .help-btn:active {
+      transform: scale(.98);
+      filter: brightness(.96);
+    }
+
+    .tips {
+      margin: 14px 0 0;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .bottom {
+      padding: 20px 20px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    @media (min-width: 481px) {
+      body {
+        align-items: center;
+        background: #ececec;
+      }
+
+      .page {
+        min-height: 100vh;
+        box-shadow: 0 0 50px rgba(0,0,0,.08);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="top">
+      <div class="app-name">快手极速版</div>
+      <h1 class="title">帮好友助一臂之力</h1>
+      <p class="subtitle">点击下方按钮即可完成助力</p>
+    </section>
+
+    <section class="card">
+      <div class="avatar">杭</div>
+      <h2 class="nickname">“杭晴朗”邀请你助力</h2>
+      <p class="desc">
+        助力好友夺取50元现金!
+      </p>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>助力进度</span>
+          <span>70%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="reward">
+        <strong>砸金蛋活动</strong>
+        <span>点击按钮后将进入活动内容</span>
+      </div>
+
+      <button class="help-btn" id="helpBtn">立即助力</button>
+      <p class="tips">助力完成后将自动跳转</p>
+    </section>
+
+    <footer class="bottom">
+      快手科技有限公司® 2026 lnc.
+    </footer>
+  </main>
+
+  <script>
+    const targetUrl =
+      "https://ourl.cn/wgyZbm";
+
+    document.getElementById("helpBtn").addEventListener("click", () => {
+      window.location.href = targetUrl;
+    });
+  </script>
+</body>
+</html>
